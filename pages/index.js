@@ -4,7 +4,7 @@ import Box from '../src/components/Box'
 import { AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons';
 import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations';
 
-function ProfileSidebar(propriedades){
+function ProfileSidebar(propriedades) {
   return (
     <Box as="aside">
       <img src={`https://github.com/${propriedades.githubUser}.png`} style={{ borderRadius: '8px' }} />
@@ -12,47 +12,51 @@ function ProfileSidebar(propriedades){
 
       <p>
         <a className="boxLink" href={`https://github.com/${propriedades.githubUser}`}>
-          @{propriedades.github.User}
+          @{propriedades.githubUser}
         </a>
       </p>
       <hr />
+
+      <AlurakutProfileSidebarMenuDefault />
     </Box>
   )
 }
 
 export default function Home() {
-  const usuarioAleatorio = 'aju9000';
+  const usuarioAleatorio = 'omariosouto';
   const [comunidades, setComunidades] = React.useState([{
-    id: '5646545654',
+    id: '12802378123789378912789789123896123', 
     title: 'Eu odeio acordar cedo',
-    image: 'https://alurakutvercel.app/capa-comunidade-01.jpg'
+    image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
   }]);
   // const comunidades = comunidades[0];
-  // const alteradorDeComunidades/setComunidades = comunidades [1];
+  // const alteradorDeComunidades/setComunidades = comunidades[1];
 
   console.log('Nosso teste', );
-  //const comunidades = ['Alurakut'];
+  // const comunidades = ['Alurakut'];
   const pessoasFavoritas = [
-    'peas',
-    'omariosouto',
     'juunegreiros',
-    'amigoscode',
-    'CodingTrain',
-    'shiffman',
+    'omariosouto',
+    'peas',
+    'rafaballerini',
+    'marcobrunodev',
+    'felipefialho',
   ]
 
   return (
     <>
       <AlurakutMenu />
       <MainGrid>
+        {/* <Box style="grid-area: profileArea;"> */}
         <div className="profileArea" style={{ gridArea: 'profileArea' }}>
-          <ProfileSidebar githubUser={usuarioAleatorio}/>
+          <ProfileSidebar githubUser={usuarioAleatorio} />
         </div>
         <div className="welcomeArea" style={{ gridArea: 'welcomeArea' }}>
           <Box>
             <h1 className="title">
-              Bem vindo(a)
+              Bem vindo(a) 
             </h1>
+
             <OrkutNostalgicIconSet />
           </Box>
 
@@ -96,8 +100,7 @@ export default function Home() {
           </Box>
         </div>
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
-          
-        <ProfileRelationsBoxWrapper>
+          <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
               Comunidades ({comunidades.length})
             </h2>
@@ -114,7 +117,6 @@ export default function Home() {
               })}
             </ul>
           </ProfileRelationsBoxWrapper>
-          
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
               Pessoas da comunidade ({pessoasFavoritas.length})
