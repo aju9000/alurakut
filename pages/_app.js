@@ -1,5 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { AlurakutStyles } from '../src/lib/AluraCommons.js';
+import { AlurakutStyles } from '../src/lib/AlurakutCommons.js';
 
 const GlobalStyle = createGlobalStyle`
   /* Reset CSS* (Necolas Reset CSS)*/
